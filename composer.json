@@ -1,0 +1,39 @@
+{
+  "name": "frdl/frdl-oidplus-modifications-pack",
+  "description": "oidplus-modifications: WEID, FreeWEID, Host, ...",
+  "homepage": "https://registry.frdl.de",
+  "type":"project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Till Wehowski",
+      "email": "software@frdl.de",
+      "homepage": "https://frdl.de"
+    },
+	{
+	  "name" : "Daniel Marschall",
+	  "homepage" : "https://www.viathinksoft.com"		  
+	}
+  ],
+  "repositories": [{
+    "type": "composer",
+    "url": "https://packages.frdl.de"
+  }],
+  "require": {
+    "php": ">=7.2",
+	"frdl/frdlweb-composer-installers" : "*",
+    "webfan3/frdl-module-remote-psr4" : "*",
+	"frdl/oid2weid" : "*",
+	"frdl/frdl-oidplus-plugin-type-host" : "*",
+	"frdl/frdl-oidplus-plugin-type-weid" : "*",
+	"frdl/frdl-oidplus-plugin-page-frdlweb-freeoid" : "*"
+  },
+  "autoload": {
+	"classmap"  : ["oid-frdl-classes/"]
+  },
+  "scripts": {
+        "post-autoload-dump": [
+            "Wehowski\\WEID::install"
+         ]   
+  }
+}
